@@ -3,33 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuestionario de Satisfacción Laboral</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Clima Laboral</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #161a67;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 15px;
+            font-weight: bold;
+            padding: 10px 20px;
+        }
+
+        nav a:hover {
+            background-color: #161a67;
+            border-radius: 5px;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 15px;
+            background-color: #161a67;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #161a67;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .contact-form input[type="submit"] {
+            background-color: #161a67;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact-form input[type="submit"]:hover {
+            background-color: #161a67;
+        }
+
+        .testimonials {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre los testimonios */
+}
+
+.testimonial {
+    background-color: #f9f9f9;
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para mejorar la visibilidad */
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.testimonial-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px; /* Espacio entre el ícono y el texto */
+    border: 2px solid #4CAF50; /* Borde para destacar el ícono */
+}
+
+.testimonial h4 {
+    margin: 0;
+    color: #161a67;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.testimonial p {
+    margin: 0;
+    color: #555;
+    font-size: 1em;
+    line-height: 1.5;
+}
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Cuestionario de Satisfacción Laboral</h1>
-            <p>Queremos conocer tu opinión para mejorar nuestro entorno de trabajo.</p>
-        </div>
-    </header>
+    <header class="site-header">
+        <h1>Clima Laboral</h1>
+        <nav>
+            <a href="#about">Acerca de</a>
+            <a href="#testimonials">Testimonios</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#contact">Contacto</a>
+        </nav>
+    </header>    
+
     <section id="about">
-        <div class="container">
-            <h2>¿Por qué es importante?</h2>
-            <p>Tu bienestar en el trabajo es nuestra prioridad. Este cuestionario nos ayudará a entender cómo te sientes y qué podemos hacer para mejorar.</p>
+        <h2>Acerca de</h2>
+        <div class="image-container">
+            <img src="https://i.pinimg.com/564x/26/44/20/264420e69f65a0a91b7c05ad9d41c354.jpg" alt="Imagen acerca de">
+        </div>
+        <p>Bienvenido a nuestro espacio de clima laboral. Somos una consultoría dedicada a mejorar el ambiente laboral en diversas organizaciones, ayudando a incrementar la satisfacción y productividad de los empleados.</p>
+    </section>
+
+    <section id="testimonials">
+        <h2>Testimonios de nuestros colaboradores</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <div class="testimonial-header">
+                    <img src="https://i.pinimg.com/736x/76/f3/f3/76f3f3007969fd3b6db21c744e1ef289.jpg" alt="Icono de Usuario" class="testimonial-icon">
+                    <h4>Diana Pérez</h4>
+                </div>
+                <p>"Gracias a las encuestas de satisfacción laboral, pudimos identificar la clave para mejorar y aumentar la moral del equipo."</p>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-header">
+                    <img src="https://i.pinimg.com/736x/76/f3/f3/76f3f3007969fd3b6db21c744e1ef289.jpg" alt="Icono de Usuario" class="testimonial-icon">
+                    <h4>Antonio Reyes</h4>
+                </div>
+                <p>"Los talleres de gestión del cambio fueron esenciales para ayudarnos entre empleados a adaptarnos a nuevas políticas."</p>
+            </div>
         </div>
     </section>
-    <section id="cta">
-        <div class="container">
-            <h2>¡Participa ahora!</h2>
-            <p>Completar el cuestionario toma menos de 5 minutos y es completamente anónimo.</p>
-            <a href="link-al-cuestionario" class="btn">Comenzar Cuestionario</a>
+    
+
+    <section id="projects">
+        <h2>Proyectos</h2>
+        <div class="projects">
+            <div class="project">
+                <h4>Proyecto 1: Evaluación del Clima Organizacional</h4>
+                <div class="image-container">
+                    <img src="https://via.placeholder.com/800x400" alt="Imagen Proyecto 1">
+                </div>
+                <p>Realizamos un análisis profundo del clima laboral en una empresa de tecnología, identificando áreas de mejora y proponiendo soluciones efectivas.</p>
+            </div>
+            <div class="project">
+                <h4>Proyecto 2: Talleres de Desarrollo Profesional</h4>
+                <div class="image-container">
+                    <img src="https://via.placeholder.com/800x400" alt="Imagen Proyecto 2">
+                </div>
+                <p>Organizamos talleres para empleados de una empresa de servicios, enfocándonos en habilidades de comunicación y liderazgo.</p>
+            </div>
         </div>
     </section>
+
+    <section id="contact">
+        <h2>Contacto</h2>
+        <p>¿Tienes alguna pregunta? ¡Contáctanos!</p>
+        <form class="contact-form" action="mailto:tucorreo@ejemplo.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Nombre" required>
+            <input type="email" name="email" placeholder="Correo electrónico" required>
+            <textarea name="message" placeholder="Mensaje" rows="5" required></textarea>
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+
     <footer>
-        <div class="container">
-            <p>© 2024 Empresa XYZ. Todos los derechos reservados.</p>
-        </div>
+        <p>&copy; 2024 Clima Laboral DIAVAZ. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
