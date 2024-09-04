@@ -7,25 +7,33 @@
     <style>
         /* Estilos generales */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+            line-height: 1.6;
         }
 
         header {
-            background-color: #161a67;
+            background-color: #181a41;
             color: white;
             text-align: center;
             padding: 1.5rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            max-width: 120px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+            border-radius: 50%;
         }
 
         nav {
             text-align: center;
+            margin-top: 1rem;
             margin-bottom: 2rem;
         }
 
@@ -35,11 +43,13 @@
             margin: 0 15px;
             font-weight: bold;
             padding: 10px 20px;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         nav a:hover {
-            background-color: #161a67;
+            background-color: #181a41;
             border-radius: 5px;
+            transform: scale(1.05);
         }
 
         section {
@@ -48,7 +58,12 @@
             padding: 20px;
             background-color: white;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+
+        section:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
         .image-container {
@@ -60,30 +75,36 @@
             max-width: 100%;
             height: auto;
             border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
         }
 
         footer {
-            background-color: #333;
+            background-color: #181a41;
             color: white;
             text-align: center;
             padding: 1rem 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            margin-top: 20px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .btn {
             display: inline-block;
             padding: 10px 20px;
             margin-top: 15px;
-            background-color: #161a67;
+            background-color: #181a41;
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .btn:hover {
-            background-color: #161a67;
+            background-color: #181a41;
+            transform: scale(1.05);
         }
 
         .contact-form {
@@ -93,72 +114,83 @@
 
         .contact-form input,
         .contact-form textarea {
-            padding: 10px;
+            padding: 12px;
             margin: 10px 0;
             border: 1px solid #ddd;
             border-radius: 4px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #181a41;
+            box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+            outline: none;
         }
 
         .contact-form input[type="submit"] {
-            background-color: #161a67;
+            background-color: #181a41;
             color: white;
             border: none;
             cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .contact-form input[type="submit"]:hover {
-            background-color: #161a67;
+            background-color: #181a41;
+            transform: scale(1.05);
         }
 
         .testimonials {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Espacio entre los testimonios */
-}
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
+        .testimonial {
+            background-color: #ecf0f1;
+            margin: 10px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #181a41;
+            transition: transform 0.3s;
+        }
 
-.testimonial {
-    background-color: #f9f9f9;
-    margin: 10px 0;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para mejorar la visibilidad */
-    border: 1px solid #e0e0e0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
+        .testimonial:hover {
+            transform: translateX(10px);
+        }
 
-.testimonial-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
 
-.testimonial-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 15px; /* Espacio entre el ícono y el texto */
-    border: 2px solid #4CAF50; /* Borde para destacar el ícono */
-}
+        .testimonial-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid #181a41;
+        }
 
-.testimonial h4 {
-    margin: 0;
-    color: #161a67;
-    font-size: 1.2em;
-    font-weight: bold;
-}
+        .testimonial h4 {
+            margin: 0;
+            color: #3498db;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
 
-.testimonial p {
-    margin: 0;
-    color: #555;
-    font-size: 1em;
-    line-height: 1.5;
-}
+        .testimonial p {
+            margin: 0;
+            color: #7f8c8d;
+            font-size: 1em;
+            line-height: 1.5;
+        }
 
- /* Estilos responsivos */
- @media (max-width: 768px) {
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
             nav a {
                 margin: 0 10px;
                 font-size: 0.9rem;
@@ -172,14 +204,22 @@
             .contact-form textarea {
                 font-size: 0.9rem;
             }
-        }
 
+            .testimonial {
+                padding: 15px;
+            }
+
+            .testimonial h4 {
+                font-size: 1.1em;
+            }
+        }
     </style>
 </head>
 <body>
 
     <header class="site-header">
-        <h1>Clima Laboral</h1>
+        <img src="data:image/png;base64,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" alt="Logo de Clima Laboral">
+        <h1>Departamento de Psicología</h1>
         <nav>
             <a href="#about">Acerca de</a>
             <a href="#testimonials">Testimonios</a>
@@ -225,14 +265,14 @@
                 <div class="image-container">
                     <img src="https://via.placeholder.com/800x400" alt="Imagen Proyecto 1">
                 </div>
-                <p>Realizamos un análisis profundo del clima laboral en una empresa de tecnología, identificando áreas de mejora y proponiendo soluciones efectivas.</p>
+                <p>Realizamos un análisis profundo del clima laboral en el área de TI, identificando mejoras y proponiendo soluciones efectivas.</p>
             </div>
             <div class="project">
                 <h4>Proyecto 2: Talleres de Desarrollo Profesional</h4>
                 <div class="image-container">
                     <img src="https://via.placeholder.com/800x400" alt="Imagen Proyecto 2">
                 </div>
-                <p>Organizamos talleres para empleados de una empresa de servicios, enfocándonos en habilidades de comunicación y liderazgo.</p>
+                <p>Organizamos talleres para empleados en la empresa, enfocándonos en habilidades de comunicación y liderazgo.</p>
             </div>
         </div>
     </section>
